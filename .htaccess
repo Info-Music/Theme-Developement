@@ -164,6 +164,11 @@
     RewriteCond %{REQUEST_FILENAME} !-l
 
 ############################################
+## exclude the github pull script (webhook url)
+
+    RewriteCond %{REQUEST_URI} !^/pull.php
+
+############################################
 ## rewrite everything else to index.php
 
     RewriteRule .* index.php [L]
